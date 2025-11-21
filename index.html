@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery DOM Manipulation</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        ul {
+            list-style-type: square;
+        }
+
+        #count {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Fruit List</h2>
+
+    <ul id="fruitList">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+    </ul>
+
+    <div id="count"></div>
+
+    <script>
+        $(document).ready(function () {
+
+            // 1. Change text color of all list items to blue
+            $("#fruitList li").css("color", "blue");
+
+            // 2. Add new list item "Mango"
+            $("#fruitList").append("<li>Mango</li>");
+
+            // 3. Highlight first and last items
+            $("#fruitList li:first").css("background-color", "lightyellow");
+            $("#fruitList li:last").css("background-color", "lightgreen");
+
+            // 4. Display total number of list items
+            let totalItems = $("#fruitList li").length;
+            $("#count").text("Total items: " + totalItems);
+        });
+    </script>
+
+</body>
+</html>
